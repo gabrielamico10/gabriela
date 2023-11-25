@@ -29,5 +29,11 @@ describe("Estudiante", function(){
         student.agregarNota(nota);
         expect(student.notas).toEqual(jasmine.arrayContaining([nota]));
     });
+
+    //Al eliminar una nota comprobar que no se encuentra en el array de notas.
+    it("Remove a grade", function(){
+        student.eliminarNota(nota);
+        expect(student.notas).not.toEqual(jasmine.arrayContaining([nota]));
+    });
 });
 

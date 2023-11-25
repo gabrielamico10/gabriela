@@ -1,11 +1,12 @@
 describe("Estudiante", function(){
-    var course;
     var student;
-    var nota = 8;
+    var nota1;
+    var nota2;
 
     beforeAll(function(){
-        course = new Curso(1, "Git", "Version control system");
         student = new Estudiante("John Lee", 18);
+        nota1 = new Nota("Unidad1", 8);
+        nota2 = new Nota("Unidad2", 9);
     });
 
     beforeEach(function(){
@@ -26,20 +27,28 @@ describe("Estudiante", function(){
 
     //Al agregar una nota comprobar que se encuentra almacenada en el array de notas.
     it("Add a grade", function(){
-        student.agregarNota(nota);
-        expect(student.notas).toEqual(jasmine.arrayContaining([nota]));
+        student.agregarNota(nota1);
+        expect(student.notas).toEqual(jasmine.arrayContaining([nota1]));
     });
 
     //Al eliminar una nota comprobar que no se encuentra en el array de notas.
     it("Remove a grade", function(){
-        student.eliminarNota(nota);
-        expect(student.notas).not.toEqual(jasmine.arrayContaining([nota]));
+        student.eliminarNota(nota1);
+        expect(student.notas).not.toEqual(jasmine.arrayContaining([nota1]));
     });
 
     //Al calcular la media comprobar que si el array es de tamaño 0 la nota media es 0
     it("Calcular media", function(){
         var media = student.calcularMedia();
         expect(media).toEqual(0);
+    });
+
+    //Al calcular la media de un estudiantes con los notas 8 y 9 para la Unidad 1 y Unidad 2 el valor obtenido es 8,5
+    it("Calcular media II", function(){
+        student.agregarNota(nota1);
+        student.agregarNota(nota2);
+        var media = student.calcularMedia();
+        expect(media).toEqual(8.5);
     });
 });
 

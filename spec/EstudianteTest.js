@@ -1,6 +1,7 @@
 describe("Estudiante", function(){
     var course;
     var student;
+    var nota = 8;
 
     beforeAll(function(){
         course = new Curso(1, "Git", "Version control system");
@@ -23,5 +24,10 @@ describe("Estudiante", function(){
         expect(student.alta).toEqual(0);
     });
 
+    //Al agregar una nota comprobar que se encuentra almacenada en el array de notas.
+    it("Add a grade", function(){
+        student.agregarNota(nota);
+        expect(student.notas).toEqual(jasmine.arrayContaining([nota]));
+    });
 });
 

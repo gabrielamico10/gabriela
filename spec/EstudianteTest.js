@@ -1,21 +1,26 @@
 describe("Estudiante", function(){
     var course;
-    var student1, student2;
-    var alta;
+    var student;
 
     beforeAll(function(){
         course = new Curso(1, "Git", "Version control system");
-        student1 = new Estudiante("John Lee", 18);
-        student2 = new Estudiante("Tom Bee", 19);
+        student = new Estudiante("John Lee", 18);
     });
 
     beforeEach(function(){
-        course.students = [];
+        student.notas = [];
     });
 
+    // Al finalizar un alta comprobar que el atributo alta almacena el valor 1
     it("Ralizar alta", function(){
-        student1.realizarAlta();
-        expect(student1.alta).toEqual(1);
+        student.realizarAlta();
+        expect(student.alta).toEqual(1);
+    });
+
+    //Al finalizar una baja comprobar que el atributo baja almacena el valor 0
+    it("Ralizar baja", function(){
+        student.realizarBaja();
+        expect(student.alta).toEqual(0);
     });
 
 });

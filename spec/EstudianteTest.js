@@ -35,5 +35,11 @@ describe("Estudiante", function(){
         student.eliminarNota(nota);
         expect(student.notas).not.toEqual(jasmine.arrayContaining([nota]));
     });
+
+    //Al calcular la media comprobar que si el array es de tamaño 0 la nota media es 0
+    it("Calcular media", function(){
+        var media = student.calcularMedia();
+        expect(media).toEqual(0);
+    });
 });
 

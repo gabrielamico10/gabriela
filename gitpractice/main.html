@@ -43,8 +43,8 @@
 
         .section h2 {
             font-size: 70px;
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-top: 30px;
             font-weight:bold;
             text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
         }
@@ -107,6 +107,29 @@
             cursor:pointer;
         }
 
+        .course-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        .course {
+            width: 15%;
+            height: 15;
+            margin: 10px;
+            padding: 15px;
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        .course img {
+            max-width: 100%;
+            height: 50px;
+        }
+
         footer {
             background-color: #dfdbdb;
             color: white;
@@ -140,8 +163,47 @@
 
     <!-- First Section: Ultimos cursos publicados -->
     <div id="ultimos">
-        <h3>Últimos cursos publicados</h3>
+        <h3><u>Últimos cursos publicados</u></h3>
+        <div class="course-container" id="ultimos-cursos-container"></div>
     </div>
+
+    <script>
+        async function fetchAndDisplayCourses() {
+            try {
+                const response = await fetch('http://localhost:5000/api/Curso/ultimos');
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const cursos = await response.json();
+    
+                const cursosContainer = document.getElementById('ultimos-cursos-container');
+                cursos.forEach(curso => {
+                    const courseElement = document.createElement('div');
+                    courseElement.classList.add('course');
+    
+                    const imageElement = document.createElement('img');
+                    imageElement.src = curso.thumbnail;
+                    courseElement.appendChild(imageElement);
+    
+                    const titleElement = document.createElement('h3');
+                    titleElement.textContent = curso.titulo;
+                    courseElement.appendChild(titleElement);
+    
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = curso.descripcion;
+                    courseElement.appendChild(descriptionElement);
+    
+                    cursosContainer.appendChild(courseElement);
+                });
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        }
+    
+        fetchAndDisplayCourses();
+    </script>
 
     <!-- Second Section: Cursos mejor valorados -->
     <div id="valorados">

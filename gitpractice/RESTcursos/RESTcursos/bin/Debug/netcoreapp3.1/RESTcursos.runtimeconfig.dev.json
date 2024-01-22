@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\daper\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\daper\\.nuget\\packages"
+    ]
+  }
+}

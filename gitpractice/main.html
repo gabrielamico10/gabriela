@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Calibri;
+        }
+
+        nav {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight:bold;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+            border-radius: 20px;
+        }
+
+        .section {
+            background-image: url('backg.jpg'); 
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .section h2 {
+            font-size: 70px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            font-weight:bold;
+            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+        }
+
+        h3 {
+            color: black;
+        }
+
+        #ultimos {
+            color: black;
+            font-size: 40px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            font-weight:bold;
+            text-align: center;
+        }
+
+        #valorados {
+            color: black;
+            font-size: 40px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            font-weight:bold;
+            text-align: center;
+        }
+
+        #autores {
+            color: black;
+            font-size: 40px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            font-weight:bold;
+            text-align: center;
+        }
+
+        .search-container {
+            float: right;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 20px;
+        }
+
+        button {
+            color:white;
+            background-color: black;
+            margin-left:auto;
+            margin-right: auto;
+            border-radius: 20px;
+            font-weight:bold;
+        }
+
+        button:hover {
+            cursor:pointer;
+        }
+
+        footer {
+            background-color: #dfdbdb;
+            color: white;
+            text-align: center;
+            padding: 1px;
+            font-weight:bold;
+            width: 100%;
+            font-family: Calibri;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#ultimos"><i class='fa fa-graduation-cap'></i> Últimos</a>
+        <a href="#valorados"><i class="fa fa-star"></i> Valorados</a>
+        <a href="#autores"><i class="fa fa-book"></i> Autores</a>
+
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="section">
+        <h2>Software Project Development</h2>
+    </div>
+
+    <!-- First Section: Ultimos cursos publicados -->
+    <div id="ultimos">
+        <h3>Últimos cursos publicados</h3>
+    </div>
+
+    <!-- Second Section: Cursos mejor valorados -->
+    <div id="valorados">
+        <h3>Cursos mejor valorados</h3>
+    </div>
+
+    <!-- Third Section: Autores mejor valorados -->
+    <div id="autores">
+        <h3>Autores mejor valorados</h3>
+    </div>
+
+    <footer>
+        <p>&#169 Mico Rodica Gabriela - Software Project Development - Git Practice</p>
+    </footer>
+
+</body>
+</html>

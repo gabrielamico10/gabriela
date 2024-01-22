@@ -170,10 +170,10 @@
         <a href="#valorados"><i class="fa fa-star"></i> Valorados</a>
         <a href="#autores"><i class="fa fa-book"></i> Autores</a>
 
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+        <div class="search-container" id="search-container">
+            <form id="search-form">
+                <input type="text" placeholder="Search..." name="search" id="search-input">
+                <button type="submit" onclick="handleSearch()"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </nav>
@@ -275,6 +275,28 @@
         }
 
         fetchAndDisplayAuthors();
+    </script>
+
+<script>
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const sections = ['ultimos', 'valorados', 'autores'];
+        const matchedSection = sections.find(section => searchInput.includes(section));
+
+        if (matchedSection) {
+            const sectionElement = document.getElementById(matchedSection);
+            if (sectionElement) {
+                sectionElement.scrollIntoView({ behavior: 'smooth' });
+
+                sectionElement.classList.add('highlight-section');
+                setTimeout(() => {
+                    sectionElement.classList.remove('highlight-section');
+                }, 1000);
+            }
+        } else {
+            console.log(`Performing general search for: ${searchInput}`);
+        }
+    }
     </script>
 
     <footer>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RESTcursos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e79d8fd2a7cbb9dcb0f71a2e4e259817bb2f4cfe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ff2ef81754a125085cadda7e7aa45985dabcbf5")]
 [assembly: System.Reflection.AssemblyProductAttribute("RESTcursos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RESTcursos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
